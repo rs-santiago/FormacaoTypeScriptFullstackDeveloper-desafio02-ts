@@ -1,19 +1,26 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from "./pages/Home.page";
+import Conta from "./pages/Conta.page";
 import {
-  ChakraProvider,
   Box,
+  ChakraProvider
 } from '@chakra-ui/react'
-import { Layout } from './components/Layout';
-import { CardLogin } from './components/CardLogin/CardLogin';
+import { Layout } from "./components/Layout.component";
 
 function App() {
   return (
-    <ChakraProvider>
-      <Layout>
+    <BrowserRouter>
+      <ChakraProvider>
+        <Layout>
         <Box minHeight='100vh' backgroundColor='#1E192C' padding='25px'>
-          <CardLogin />
-        </Box>
-      </Layout>
-    </ChakraProvider>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/conta' element={<Conta />} />
+          </Routes>
+          </Box>
+        </Layout>
+      </ChakraProvider>
+    </BrowserRouter>
   );
 }
 

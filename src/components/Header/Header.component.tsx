@@ -1,5 +1,6 @@
 import { Center } from '@chakra-ui/react'
 import './Header.css'
+import React from 'react'
 
 export const Header = () => {
   return (
