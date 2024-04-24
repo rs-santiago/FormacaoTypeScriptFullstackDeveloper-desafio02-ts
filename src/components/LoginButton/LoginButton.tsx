@@ -1,13 +1,13 @@
 import { Button } from "@chakra-ui/react"
-import React from "react"
+import React, { MouseEventHandler } from "react"
 
 interface IButton {
-    event: () => void
+    onClick: MouseEventHandler
 }
 
-export const LoginButton = ({ event }: IButton) => {
+export const LoginButton = ({ onClick }: IButton) => {
   return (
-    <Button onClick={event} colorScheme='teal' size='sm' width='100%' marginTop='5px'>
+    <Button onClick={onClick} colorScheme='teal' size='sm' width='100%' marginTop='5px'>
       Login
     </Button>
   )
