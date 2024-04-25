@@ -4,7 +4,7 @@ describe('login', () => {
     const mockEmail = "rodrigo@dio.bank"
 
     it('Deve exibir um alert com boas vindas caso o email seja válido', async () => {
-        const response = await login(mockEmail, "95h3n9fo43nfe")
+        const response = await login(mockEmail, "123456")
         expect(response).toBeTruthy()
     })
 

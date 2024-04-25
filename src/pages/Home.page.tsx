@@ -17,7 +17,7 @@ const Home = () => {
         const loggedIn = await login(email, password)
 
         if (!loggedIn) {
-            return alert('Email inválido')
+            return alert('Dados de login inválido')
         }
         setIsLoggedIn(true)
         changeLocalStorage({ login: true })
