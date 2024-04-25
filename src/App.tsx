@@ -7,23 +7,7 @@ import {
   ChakraProvider
 } from '@chakra-ui/react'
 import { Layout } from "./components/Layout.component";
-import { createContext } from 'react';
-
-interface IAppContext {
-  user: string
-}
-
-export const AppContext = createContext<IAppContext>({} as IAppContext)
-
-const AppContextProvider = ({ children }: any) => {
-  const user = 'Rodrigo'
-
-  return (
-    <AppContext.Provider value={{ user }}>
-      {children}
-    </AppContext.Provider>
-  )
-}
+import { AppContextProvider } from './components/AppContext.component';
 
 function App() {
   return (
