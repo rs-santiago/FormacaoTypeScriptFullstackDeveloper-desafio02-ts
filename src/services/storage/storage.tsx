@@ -1,9 +1,13 @@
-interface IDiobank {
-    login: boolean
+import { IUserDate } from "../../api"
+
+export interface IDiobank {
+    login: boolean,
+    userDate: IUserDate | null
 }
 
-const diobank = {
-    login: false
+const diobank: IDiobank = {
+    login: false,
+    userDate: null
 }
 
 export const getAllLocalStorage = (): string | null => {

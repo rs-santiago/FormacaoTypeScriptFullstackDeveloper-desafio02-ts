@@ -8,7 +8,7 @@ export const Header = () => {
   const { setIsLoggedIn, isLoggedIn } = useContext(AppContext)
   const navigate = useNavigate()
   const logout = () => {
-    changeLocalStorage({ login: false })
+    changeLocalStorage({ login: false, userDate: null })
     setIsLoggedIn(false)
     navigate('/')
   }

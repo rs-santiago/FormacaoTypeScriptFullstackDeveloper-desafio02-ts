@@ -1,7 +1,7 @@
-import { changeLocalStorage, createLocalStorage, getAllLocalStorage } from "./storage";
-
-const diobank = {
-    login: false
+import { IDiobank, changeLocalStorage, createLocalStorage, getAllLocalStorage } from "./storage";
+const diobank: IDiobank = {
+    login: false,
+    userDate: null
 }
 
 describe('storage', () => {

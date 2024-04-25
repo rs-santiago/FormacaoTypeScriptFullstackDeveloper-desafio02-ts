@@ -20,7 +20,7 @@ const Home = () => {
             return alert('Dados de login inválido')
         }
         setIsLoggedIn(true)
-        changeLocalStorage({ login: true })
+        changeLocalStorage({ login: true, userDate: loggedIn })
         navigate('/conta/1')
     }
 
