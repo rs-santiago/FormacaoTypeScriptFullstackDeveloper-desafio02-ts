@@ -1,12 +1,16 @@
 import { Center, SimpleGrid, Spinner } from "@chakra-ui/react";
 import CardInfo from "../components/CardInfo/CardInfo.component";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { IUserDate, api } from "../api";
 import { useParams, useNavigate } from "react-router-dom";
+import { AppContext } from "../App";
 
 const Conta = () => {
     const [userData, setUserData] = useState<null | IUserDate>(null)
 
+    const context = useContext(AppContext)
+    console.log('pagina conta ', context);
+    
     useEffect(() => {
         const getData = async () => {
             const data: IUserDate = await api
