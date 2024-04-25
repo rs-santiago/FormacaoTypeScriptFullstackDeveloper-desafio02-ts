@@ -1,7 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from "./pages/Home.page";
-import Conta from "./pages/Conta.page";
-import ContaInfo from "./pages/ContaInfo.page";
+import { BrowserRouter } from 'react-router-dom';
+import MainRoutes from "./routes";
 import {
   Box,
   ChakraProvider
@@ -16,11 +14,7 @@ function App() {
         <ChakraProvider>
           <Layout>
             <Box minHeight='100vh' backgroundColor='#1E192C'>
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/conta/:id' element={<Conta />} />
-                <Route path='/infoconta' element={<ContaInfo />} />
-              </Routes>
+              <MainRoutes />
             </Box>
           </Layout>
         </ChakraProvider>
