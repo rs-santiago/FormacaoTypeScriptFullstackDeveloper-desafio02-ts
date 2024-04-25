@@ -2,9 +2,10 @@ import { Box, Center, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { CardLogin } from "../components/CardLogin/CardLogin.component";
 import { LoginButton } from "../components/LoginButton/LoginButton.component";
 import { useContext, useState } from "react";
-import { login } from "../services/login";
+import { login } from "../services/Login/login";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../components/AppContext.component";
+import { changeLocalStorage } from "../services/storage/storage";
 
 const Home = () => {
     const [email, setEmail] = useState<string>('')
@@ -19,6 +20,7 @@ const Home = () => {
             return alert('Email inválido')
         }
         setIsLoggedIn(true)
+        changeLocalStorage({ login: true })
         navigate('/conta/1')
     }
 
