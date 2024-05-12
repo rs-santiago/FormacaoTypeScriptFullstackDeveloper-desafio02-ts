@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { createContext } from "react"
 import { getAllLocalStorage } from '../services/storage/storage'
 
@@ -8,9 +8,13 @@ interface IAppContext {
     setIsLoggedIn: (isLoggedIn: boolean) => void
 }
 
+interface IAppContextProvider {
+    children: React.ReactNode
+}
+
 export const AppContext = createContext<IAppContext>({} as IAppContext)
 
-export const AppContextProvider = ({ children }: any) => {
+export const AppContextProvider = ({ children }: IAppContextProvider) => {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
     const storage = getAllLocalStorage()
 
@@ -29,4 +33,9 @@ export const AppContextProvider = ({ children }: any) => {
             {children}
         </AppContext.Provider>
     )
+}
+
+export const useAppContext = () => {
+    const context = useContext(AppContext)
+    return context
 }
