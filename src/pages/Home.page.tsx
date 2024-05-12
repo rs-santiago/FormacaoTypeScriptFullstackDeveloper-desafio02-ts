@@ -34,14 +34,14 @@ const Home = () => {
                     <FormLabel>Email</FormLabel>
                     <Input type='email' placeholder="email" size='md'
                         value={email}
-                        onChange={(e: any) => setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </FormControl>
                 <FormControl>
                     <FormLabel>Password</FormLabel>
                     <Input type='password' placeholder="password" size='md'
                         value={password}
-                        onChange={(e: any) => setPassword(e.target.value)}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </FormControl>
                 <Center>
